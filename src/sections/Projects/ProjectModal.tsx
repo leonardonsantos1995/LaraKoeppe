@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
-import { X, ChevronLeft, ChevronRight } from 'lucide-react'
+import { X, ChevronLeft, ChevronRight, Loader2 } from 'lucide-react'
 import type { Project } from '@/types/project'
 import { categoryLabels } from '@/types/project'
 import { Badge } from '@/components/ui/Badge'
@@ -12,11 +12,13 @@ interface ProjectModalProps {
 
 export function ProjectModal({ project, onClose }: ProjectModalProps) {
   const [currentImage, setCurrentImage] = useState(0)
+  const [imageLoaded, setImageLoaded] = useState(false)
 
   useEffect(() => {
     if (project) {
       document.body.style.overflow = 'hidden'
       setCurrentImage(0)
+      setImageLoaded(false)
     } else {
       document.body.style.overflow = ''
     }
@@ -41,9 +43,10 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [handleKeyDown])
 
-  // Preload adjacent images for smoother carousel navigation
+  // Reset loading state and preload adjacent images
   useEffect(() => {
     if (!project) return
+    setImageLoaded(false)
     const toPreload = [currentImage - 1, currentImage + 1].filter(
       (i) => i >= 0 && i < project.images.length
     )
@@ -80,13 +83,20 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             </button>
 
             <div className="relative aspect-[16/10] bg-charcoal-100">
+              {!imageLoaded && (
+                <div className="absolute inset-0 z-10 flex items-center justify-center">
+                  <Loader2 size={32} className="animate-spin text-charcoal-400" />
+                </div>
+              )}
               <img
+                key={currentImage}
                 src={
                   project.images[currentImage]?.src ??
                   'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1200&q=80'
                 }
                 alt={project.images[currentImage]?.alt ?? project.title}
-                className="h-full w-full object-cover"
+                className={`h-full w-full object-cover transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                onLoad={() => setImageLoaded(true)}
               />
 
               {project.images.length > 1 && (
