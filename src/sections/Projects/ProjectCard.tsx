@@ -5,19 +5,21 @@ import { categoryLabels } from '@/types/project'
 
 interface ProjectCardProps {
   project: Project
+  index: number
   onOpen: (project: Project) => void
 }
 
-export function ProjectCard({ project, onOpen }: ProjectCardProps) {
+export function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
   const thumbnail = project.images[project.thumbnailIndex ?? 0]
 
   return (
     <motion.div
       layout
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
-      transition={{ duration: 0.4 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.6, delay: index * 0.15, ease: 'easeOut' }}
       className="group relative cursor-pointer overflow-hidden"
       onClick={() => onOpen(project)}
     >
@@ -52,8 +54,8 @@ export function ProjectCard({ project, onOpen }: ProjectCardProps) {
         </div>
 
         {/* Bottom content */}
-        <div className="absolute bottom-0 left-0 right-0 p-6">
-          <h3 className="font-display text-2xl font-semibold text-white transition-transform duration-500 translate-y-1 group-hover:translate-y-0">
+        <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-12 transition-transform duration-500 ease-out group-hover:translate-y-0">
+          <h3 className="font-display text-2xl font-semibold text-white">
             {project.title}
           </h3>
 
