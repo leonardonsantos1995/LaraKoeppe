@@ -1,5 +1,6 @@
+import { useState } from 'react'
 import { motion } from 'motion/react'
-import { Camera, ArrowUpRight } from 'lucide-react'
+import { Camera, ArrowUpRight, Loader2 } from 'lucide-react'
 import type { Project } from '@/types/project'
 import { categoryLabels } from '@/types/project'
 
@@ -11,6 +12,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
   const thumbnail = project.images[project.thumbnailIndex ?? 0]
+  const [loaded, setLoaded] = useState(false)
 
   return (
     <motion.div
@@ -24,14 +26,20 @@ export function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
       onClick={() => onOpen(project)}
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-charcoal-100">
+        {!loaded && (
+          <div className="absolute inset-0 z-10 flex items-center justify-center">
+            <Loader2 size={24} className="animate-spin text-charcoal-300" />
+          </div>
+        )}
         <img
           src={
             thumbnail?.src ??
             'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&q=80'
           }
           alt={thumbnail?.alt ?? project.title}
-          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+          className={`h-full w-full object-cover transition-all duration-700 ease-out group-hover:scale-110 ${loaded ? 'opacity-100' : 'opacity-0'}`}
           loading="lazy"
+          onLoad={() => setLoaded(true)}
         />
 
         {/* Permanent gradient overlay */}
