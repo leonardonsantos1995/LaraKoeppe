@@ -41,6 +41,18 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [handleKeyDown])
 
+  // Preload adjacent images for smoother carousel navigation
+  useEffect(() => {
+    if (!project) return
+    const toPreload = [currentImage - 1, currentImage + 1].filter(
+      (i) => i >= 0 && i < project.images.length
+    )
+    toPreload.forEach((i) => {
+      const img = new Image()
+      img.src = project.images[i].src
+    })
+  }, [project, currentImage])
+
   return (
     <AnimatePresence>
       {project && (

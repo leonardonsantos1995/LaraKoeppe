@@ -27,8 +27,8 @@ export function Contact() {
           <FadeInWhenVisible direction="right">
             <div className="relative aspect-[4/3] overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80"
-                alt="Arquitetura moderna"
+                src="/images/profile/contacts.jpeg"
+                alt="Lara Koeppe"
                 className="h-full w-full object-cover"
                 loading="lazy"
               />
