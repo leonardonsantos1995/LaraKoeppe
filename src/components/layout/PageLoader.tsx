@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 
 interface PageLoaderProps {
@@ -5,6 +6,17 @@ interface PageLoaderProps {
 }
 
 export function PageLoader({ visible }: PageLoaderProps) {
+  useEffect(() => {
+    if (visible) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [visible])
+
   return (
     <AnimatePresence>
       {visible && (
