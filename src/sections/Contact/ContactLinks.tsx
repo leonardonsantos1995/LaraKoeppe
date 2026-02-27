@@ -1,4 +1,4 @@
-import { Mail, Phone, Instagram, Linkedin, MapPin } from 'lucide-react'
+import { Mail, Phone, Instagram, Linkedin } from 'lucide-react'
 import { contact } from '@/data/contact'
 import { FadeInWhenVisible } from '@/components/animation/FadeInWhenVisible'
 
@@ -30,13 +30,6 @@ const links = [
     href: contact.social.linkedin,
     external: true,
     description: 'LinkedIn',
-  },
-  {
-    icon: MapPin,
-    label: contact.address,
-    href: `https://maps.google.com/?q=${encodeURIComponent(contact.address)}`,
-    external: true,
-    description: 'Endereço',
   },
 ]
 

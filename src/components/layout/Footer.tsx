@@ -73,7 +73,7 @@ export function Footer() {
           <div className="h-px w-24 bg-charcoal-700 mb-8" />
 
           <p className="text-xs text-stone-600">
-            &copy; {new Date().getFullYear()} Lara B. Koeppe Arquitetura. Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} Lara Koeppe Arquitetura. Todos os direitos reservados.
           </p>
         </div>
       </Container>
