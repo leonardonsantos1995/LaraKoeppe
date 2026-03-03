@@ -5,12 +5,12 @@ export const about = {
   location: 'Santa Cruz do Sul, RS',
   bio: [
     'Bacharelado em Arquitetura e Urbanismo pela UNISC, com atuação no segmento da Arquitetura e construção civil, contribuindo no desenvolvimento de projetos nas diversas escalas, de detalhamento à finalização.',
-    'Experiência em modelagem 3D, renderização, detalhamento técnico e design de interiores, utilizando softwares como AutoCAD, SketchUp e Luminio para dar vida a cada projeto.',
+    'Experiência em modelagem 3D, renderização, detalhamento técnico e design de interiores, utilizando softwares como AutoCAD, SketchUp e Lumion para dar vida a cada projeto.',
   ],
   education: [
     {
       degree: 'Arquitetura e Urbanismo',
-      institution: 'UNISC',
+      institution: 'UNISC (Graduação 2025)',
     },
     {
       degree: 'Ensino Fundamental e Médio',
