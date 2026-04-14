@@ -93,7 +93,10 @@ export const projects: Project[] = [
     ],
     software: ['SketchUp', 'Lumion'],
     thumbnailIndex: 0,
-    images: buildImages('casa-aria', 'Casa Aria', 11),
+    images: [
+      { src: '/images/projects/casa-aria/image-3.png', alt: 'Casa Aria - Vista 3' },
+      ...buildImages('casa-aria', 'Casa Aria', 11).filter((_, i) => i !== 2),
+    ],
     featured: false,
   },
   {
@@ -111,7 +114,10 @@ export const projects: Project[] = [
     ],
     software: ['SketchUp', 'Lumion'],
     thumbnailIndex: 0,
-    images: buildImages('casa-recanto', 'Casa Recanto', 12),
+    images: [
+      { src: '/images/projects/casa-recanto/image-10.png', alt: 'Casa Recanto - Vista 10' },
+      ...buildImages('casa-recanto', 'Casa Recanto', 12).filter((_, i) => i !== 9),
+    ],
     featured: false,
   },
 ]

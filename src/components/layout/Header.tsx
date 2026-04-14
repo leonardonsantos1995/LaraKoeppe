@@ -44,7 +44,7 @@ export function Header() {
             </span>
             <span
               className={cn(
-                'block text-[10px] font-body font-medium tracking-[0.3em] uppercase transition-colors',
+                'block text-center text-[10px] font-body font-medium tracking-[0.3em] uppercase transition-colors',
                 scrolled ? 'text-charcoal-500' : 'text-stone-300'
               )}
             >
