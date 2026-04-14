@@ -25,30 +25,14 @@ export function PageLoader({ visible }: PageLoaderProps) {
           transition={{ duration: 0.6, ease: 'easeInOut' }}
           className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-charcoal-900"
         >
-          <motion.h1
+          <motion.img
+            src="/images/logo/logo-white.png"
+            alt="Lara Koeppe — Arquitetura & Urbanismo"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-display text-4xl font-semibold tracking-tight text-white md:text-5xl"
-          >
-            LARA KOEPPE
-          </motion.h1>
-
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="my-4 h-px w-16 origin-center bg-olive-300"
+            className="w-[220px] md:w-[280px]"
           />
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="font-body text-xs tracking-[0.3em] uppercase text-stone-400"
-          >
-            Arquitetura & Urbanismo
-          </motion.p>
 
           <motion.div
             initial={{ opacity: 0 }}
