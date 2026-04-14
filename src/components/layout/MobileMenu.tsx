@@ -46,7 +46,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
           <button
             key={item.href}
             onClick={() => handleNavClick(item.href)}
-            className="cursor-pointer font-display text-2xl font-medium text-stone-200 hover:text-olive-300 transition-colors"
+            className="cursor-pointer font-logo text-2xl font-light tracking-[0.1em] text-stone-200 hover:text-olive-300 transition-colors"
             style={{ transitionDelay: open ? `${i * 50}ms` : '0ms' }}
           >
             {item.label}
@@ -55,7 +55,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
       </nav>
 
       <div className="absolute bottom-8 text-center">
-        <span className="font-display text-sm text-stone-500">LARA KOEPPE</span>
+        <span className="font-logo text-sm font-light tracking-[0.2em] text-stone-500">LARA KOEPPE</span>
         <span className="block text-[10px] tracking-[0.3em] text-stone-600 mt-1">
           ARQUITETURA
         </span>

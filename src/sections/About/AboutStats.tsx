@@ -8,7 +8,7 @@ export function AboutStats() {
         <FadeInWhenVisible key={stat.label} delay={i * 0.1}>
           <div className="flex flex-col items-center text-center">
             <span
-              className="font-display text-3xl font-semibold leading-none text-olive-400 md:text-4xl"
+              className="font-body text-3xl font-semibold leading-none text-olive-400 md:text-4xl"
               style={{ fontVariantNumeric: 'lining-nums' }}
             >
               {stat.value}

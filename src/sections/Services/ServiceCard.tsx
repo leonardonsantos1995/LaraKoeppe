@@ -33,7 +33,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
       <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-sm bg-stone-100 text-charcoal-700 transition-colors group-hover:bg-olive-100 group-hover:text-olive-500">
         <Icon size={24} />
       </div>
-      <h3 className="font-display text-lg font-semibold text-charcoal-900 mb-3">
+      <h3 className="font-body text-lg font-semibold text-charcoal-900 mb-3">
         {service.title}
       </h3>
       <p className="text-sm leading-relaxed text-charcoal-500">

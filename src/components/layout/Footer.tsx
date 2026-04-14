@@ -13,7 +13,7 @@ export function Footer() {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="cursor-pointer mb-8"
           >
-            <span className="font-display text-2xl font-semibold tracking-tight text-stone-100">
+            <span className="font-logo text-2xl font-light tracking-[0.2em] text-stone-100">
               LARA KOEPPE
             </span>
             <span className="block text-[10px] font-body font-medium tracking-[0.3em] uppercase text-stone-500">

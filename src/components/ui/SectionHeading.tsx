@@ -12,7 +12,7 @@ export function SectionHeading({ title, subtitle, className, light }: SectionHea
     <div className={cn('mb-16 text-center', className)}>
       <h2
         className={cn(
-          'font-display text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl',
+          'font-body text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl',
           light ? 'text-stone-50' : 'text-charcoal-900'
         )}
       >

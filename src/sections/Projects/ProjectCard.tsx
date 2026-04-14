@@ -67,7 +67,7 @@ export function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
 
         {/* Bottom content */}
         <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-12 transition-transform duration-500 ease-out group-hover:translate-y-0">
-          <h3 className="font-display text-2xl font-semibold text-white">
+          <h3 className="font-body text-2xl font-semibold text-white">
             {project.title}
           </h3>
 

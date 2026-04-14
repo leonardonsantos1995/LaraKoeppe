@@ -154,7 +154,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
             <div className="p-8">
               <div className="mb-4 flex items-center gap-3">
-                <h2 className="font-display text-2xl font-semibold text-charcoal-900">
+                <h2 className="font-body text-2xl font-semibold text-charcoal-900">
                   {project.title}
                 </h2>
                 <Badge>{categoryLabels[project.category]}</Badge>

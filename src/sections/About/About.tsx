@@ -27,7 +27,7 @@ export function About() {
 
           <FadeInWhenVisible direction="right">
             <div>
-              <h3 className="font-display text-2xl font-semibold text-charcoal-900 mb-2">
+              <h3 className="font-body text-2xl font-semibold text-charcoal-900 mb-2">
                 {about.shortName}
               </h3>
               <p className="text-sm font-medium uppercase tracking-wider text-olive-400 mb-6">
