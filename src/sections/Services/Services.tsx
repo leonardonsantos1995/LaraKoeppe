@@ -10,7 +10,7 @@ export function Services() {
       <Container>
         <SectionHeading
           title="Serviços"
-          subtitle="Soluções completas em arquitetura, do conceito à execução."
+          subtitle="Soluções completas em arquitetura."
         />
 
         <StaggerChildren className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
