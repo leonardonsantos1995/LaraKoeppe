@@ -8,10 +8,7 @@ export function About() {
   return (
     <section id="sobre" className="py-24 bg-cream">
       <Container>
-        <SectionHeading
-          title="Sobre Mim"
-          subtitle="Conheça um pouco da minha trajetória e paixão pela arquitetura."
-        />
+        <SectionHeading title="Sobre Mim" />
 
         <div className="grid gap-16 md:grid-cols-2 items-center">
           <FadeInWhenVisible direction="left">
