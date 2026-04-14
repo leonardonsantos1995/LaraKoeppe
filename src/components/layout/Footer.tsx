@@ -17,7 +17,7 @@ export function Footer() {
               LARA KOEPPE
             </span>
             <span className="block text-[10px] font-body font-medium tracking-[0.3em] uppercase text-stone-500">
-              Arquitetura & Urbanismo
+              Arquitetura
             </span>
           </button>
 
