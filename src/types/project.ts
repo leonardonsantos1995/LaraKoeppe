@@ -7,6 +7,7 @@ export type ProjectCategory =
 export interface ProjectImage {
   src: string
   alt: string
+  type?: 'image' | 'video'
 }
 
 export interface Project {

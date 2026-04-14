@@ -60,7 +60,7 @@ export function Header() {
                 className={cn(
                   'relative cursor-pointer font-body text-sm font-medium tracking-wide transition-colors',
                   scrolled ? 'text-charcoal-700 hover:text-charcoal-900' : 'text-stone-200 hover:text-white',
-                  activeSection === item.href && 'after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-full after:bg-blush-300'
+                  activeSection === item.href && 'after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-full after:bg-olive-300'
                 )}
               >
                 {item.label}

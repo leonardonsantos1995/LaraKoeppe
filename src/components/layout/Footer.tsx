@@ -26,7 +26,7 @@ export function Footer() {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="cursor-pointer text-sm text-stone-400 hover:text-blush-300 transition-colors"
+                className="cursor-pointer text-sm text-stone-400 hover:text-olive-300 transition-colors"
               >
                 {item.label}
               </button>
@@ -38,7 +38,7 @@ export function Footer() {
               href={contact.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="cursor-pointer text-stone-400 hover:text-blush-300 transition-colors"
+              className="cursor-pointer text-stone-400 hover:text-olive-300 transition-colors"
               aria-label="Instagram"
             >
               <Instagram size={20} />
@@ -47,14 +47,14 @@ export function Footer() {
               href={contact.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="cursor-pointer text-stone-400 hover:text-blush-300 transition-colors"
+              className="cursor-pointer text-stone-400 hover:text-olive-300 transition-colors"
               aria-label="LinkedIn"
             >
               <Linkedin size={20} />
             </a>
             <a
               href={`mailto:${contact.email}`}
-              className="cursor-pointer text-stone-400 hover:text-blush-300 transition-colors"
+              className="cursor-pointer text-stone-400 hover:text-olive-300 transition-colors"
               aria-label="Email"
             >
               <Mail size={20} />
@@ -63,7 +63,7 @@ export function Footer() {
               href={contact.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="cursor-pointer text-stone-400 hover:text-blush-300 transition-colors"
+              className="cursor-pointer text-stone-400 hover:text-olive-300 transition-colors"
               aria-label="WhatsApp"
             >
               <Phone size={20} />

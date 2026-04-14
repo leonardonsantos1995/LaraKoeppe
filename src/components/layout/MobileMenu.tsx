@@ -46,7 +46,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
           <button
             key={item.href}
             onClick={() => handleNavClick(item.href)}
-            className="cursor-pointer font-display text-2xl font-medium text-stone-200 hover:text-blush-300 transition-colors"
+            className="cursor-pointer font-display text-2xl font-medium text-stone-200 hover:text-olive-300 transition-colors"
             style={{ transitionDelay: open ? `${i * 50}ms` : '0ms' }}
           >
             {item.label}

@@ -18,7 +18,7 @@ export function SectionHeading({ title, subtitle, className, light }: SectionHea
       >
         {title}
       </h2>
-      <div className="mx-auto mt-4 h-px w-16 bg-blush-300" />
+      <div className="mx-auto mt-4 h-px w-16 bg-olive-300" />
       {subtitle && (
         <p
           className={cn(

@@ -20,26 +20,13 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h1 className="font-display text-5xl font-semibold tracking-tight text-white md:text-7xl lg:text-8xl">
-            LARA KOEPPE
-          </h1>
+          <h1 className="sr-only">Lara Koeppe — Arquitetura & Urbanismo</h1>
+          <img
+            src="/images/logo/logo-white.png"
+            alt="Lara Koeppe — Arquitetura & Urbanismo"
+            className="mx-auto w-[280px] md:w-[400px] lg:w-[480px]"
+          />
         </motion.div>
-
-        <motion.div
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mx-auto my-6 h-px w-24 bg-blush-300"
-        />
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="font-body text-lg font-light tracking-[0.25em] uppercase text-stone-300 md:text-xl"
-        >
-          Arquitetura & Urbanismo
-        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -49,7 +36,7 @@ export function Hero() {
         >
           <button
             onClick={() => scrollToSection('projetos')}
-            className="cursor-pointer border border-stone-400 px-8 py-3 text-sm font-medium tracking-wider uppercase text-stone-200 transition-all duration-300 hover:border-blush-300 hover:bg-blush-300/10 hover:text-white"
+            className="cursor-pointer border border-stone-400 px-8 py-3 text-sm font-medium tracking-wider uppercase text-stone-200 transition-all duration-300 hover:border-olive-300 hover:bg-olive-300/10 hover:text-white"
           >
             Conheça Meus Projetos
           </button>
@@ -64,7 +51,7 @@ export function Hero() {
           opacity: { delay: 1.4, duration: 0.6 },
           y: { delay: 1.4, duration: 2, repeat: Infinity, ease: 'easeInOut' },
         }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 cursor-pointer text-stone-400 hover:text-blush-300 transition-colors"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 cursor-pointer text-stone-400 hover:text-olive-300 transition-colors"
         aria-label="Rolar para baixo"
       >
         <ChevronDown size={28} />

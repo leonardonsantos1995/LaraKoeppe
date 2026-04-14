@@ -23,13 +23,13 @@
   --color-charcoal-800: #3d3d3d;
   --color-charcoal-900: #1a1a1a;
 
-  --color-blush-50: #fdf5f6;
-  --color-blush-100: #fbeced;
-  --color-blush-200: #f5d5d8;
-  --color-blush-300: #e8b4b8;
-  --color-blush-400: #d4868c;
-  --color-blush-500: #c06b72;
-  --color-blush-600: #a65058;
+  --color-olive-50: #f6f7f0;
+  --color-olive-100: #ebeedd;
+  --color-olive-200: #d6dcb5;
+  --color-olive-300: #b7c184;
+  --color-olive-400: #95a25c;
+  --color-olive-500: #788544;
+  --color-olive-600: #5f6b35;
 
   --color-cream: #faf9f7;
   --color-ivory: #f5f2ed;
@@ -68,7 +68,7 @@
   }
 
   ::selection {
-    background-color: var(--color-blush-300);
+    background-color: var(--color-olive-300);
     color: var(--color-charcoal-900);
   }
 }

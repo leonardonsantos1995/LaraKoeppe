@@ -11,7 +11,11 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
-  const thumbnail = project.images[project.thumbnailIndex ?? 0]
+  const thumbnailCandidate = project.images[project.thumbnailIndex ?? 0]
+  const thumbnail =
+    thumbnailCandidate?.type === 'video'
+      ? project.images.find((i) => i.type !== 'video') ?? thumbnailCandidate
+      : thumbnailCandidate
   const [loaded, setLoaded] = useState(false)
 
   return (
@@ -50,7 +54,7 @@ export function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
 
         {/* Category tag — top left */}
         <div className="absolute top-4 left-4">
-          <span className="inline-block bg-blush-300/90 backdrop-blur-sm px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-charcoal-900">
+          <span className="inline-block bg-olive-300/90 backdrop-blur-sm px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-charcoal-900">
             {categoryLabels[project.category]}
           </span>
         </div>
@@ -81,15 +85,15 @@ export function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
 
           {/* CTA — revealed on hover */}
           <div className="flex items-center gap-2 mt-3 opacity-0 translate-y-3 transition-all duration-500 delay-100 group-hover:opacity-100 group-hover:translate-y-0">
-            <span className="text-xs font-medium uppercase tracking-wider text-blush-300">
+            <span className="text-xs font-medium uppercase tracking-wider text-olive-300">
               Ver Projeto
             </span>
-            <ArrowUpRight size={14} className="text-blush-300" />
+            <ArrowUpRight size={14} className="text-olive-300" />
           </div>
         </div>
 
         {/* Blush accent line — animates on hover */}
-        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-blush-300 scale-x-0 transition-transform duration-500 origin-left group-hover:scale-x-100" />
+        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-olive-300 scale-x-0 transition-transform duration-500 origin-left group-hover:scale-x-100" />
       </div>
     </motion.div>
   )

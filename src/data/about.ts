@@ -4,8 +4,9 @@ export const about = {
   title: 'Arquiteta e Urbanista',
   location: 'Santa Cruz do Sul, RS',
   bio: [
-    'Bacharelado em Arquitetura e Urbanismo pela UNISC, com atuação no segmento da Arquitetura e construção civil, contribuindo no desenvolvimento de projetos nas diversas escalas, de detalhamento à finalização.',
-    'Experiência em modelagem 3D, renderização, detalhamento técnico e design de interiores, utilizando softwares como AutoCAD, SketchUp e Lumion para dar vida a cada projeto.',
+    'Bacharel em Arquitetura e Urbanismo pela UNISC (Universidade de Santa Cruz do Sul), com atuação voltada ao desenvolvimento de projetos arquitetônicos e de interiores em diferentes escalas — do conceito ao detalhamento e apresentação final.',
+    'Possuo experiência em modelagem 3D e renderização, criando imagens que traduzem com precisão a intenção do projeto e potencializam sua comunicação visual. Atuo com ferramentas como AutoCAD, SketchUp e Lumion, integrando técnica, estética e estratégia para gerar resultados consistentes.',
+    'Atualmente, amplio minha atuação com o uso de Inteligência Artificial aplicada à arquitetura e visualização, explorando novas formas de concepção, otimização de processos e expressão visual.',
   ],
   education: [
     {
@@ -26,10 +27,10 @@ export const about = {
     'AutoCAD',
     'SketchUp',
     'Lumion',
-    'Enscape',
     'Promob',
     'Illustrator',
     'Photoshop',
+    'InDesign',
     'Pacote Office',
   ],
   experience: [

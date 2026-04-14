@@ -9,8 +9,12 @@ import { ProjectFilter } from './ProjectFilter'
 import { ProjectGrid } from './ProjectGrid'
 import { ProjectModal } from './ProjectModal'
 
+const sortedProjects = [...projects].sort((a, b) =>
+  a.title.localeCompare(b.title, 'pt-BR')
+)
+
 export function Projects() {
-  const { activeFilter, setActiveFilter, filteredProjects } = useProjectFilter(projects)
+  const { activeFilter, setActiveFilter, filteredProjects } = useProjectFilter(sortedProjects)
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
 
   return (

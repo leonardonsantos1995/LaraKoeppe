@@ -29,11 +29,4 @@ export const services: Service[] = [
       'Produção de desenhos executivos detalhados com especificações de materiais, cortes e vistas para fabricação e execução.',
     icon: 'Ruler',
   },
-  {
-    id: 'levantamento',
-    title: 'Levantamento Arquitetônico',
-    description:
-      'Medição e documentação técnica de edificações existentes, gerando plantas precisas para reformas e regularizações.',
-    icon: 'ScanLine',
-  },
 ]

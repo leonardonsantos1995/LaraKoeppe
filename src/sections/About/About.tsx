@@ -16,7 +16,7 @@ export function About() {
         <div className="grid gap-16 md:grid-cols-2 items-center">
           <FadeInWhenVisible direction="left">
             <div className="relative">
-              <div className="absolute -top-3 -left-3 h-full w-full border border-blush-300" />
+              <div className="absolute -top-3 -left-3 h-full w-full border border-olive-300" />
               <img
                 src="/images/profile/about-me.jpeg"
                 alt="Lara B. Koeppe"
@@ -30,7 +30,7 @@ export function About() {
               <h3 className="font-display text-2xl font-semibold text-charcoal-900 mb-2">
                 {about.shortName}
               </h3>
-              <p className="text-sm font-medium uppercase tracking-wider text-blush-400 mb-6">
+              <p className="text-sm font-medium uppercase tracking-wider text-olive-400 mb-6">
                 {about.title} &mdash; {about.location}
               </p>
 

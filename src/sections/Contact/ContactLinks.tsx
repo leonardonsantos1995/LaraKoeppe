@@ -44,7 +44,7 @@ export function ContactLinks() {
             rel={link.external ? 'noopener noreferrer' : undefined}
             className="group flex cursor-pointer items-center gap-4 p-3 rounded-sm transition-colors hover:bg-stone-100"
           >
-            <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-sm bg-blush-100 text-blush-500 transition-colors group-hover:bg-blush-200">
+            <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-sm bg-olive-100 text-olive-500 transition-colors group-hover:bg-olive-200">
               <link.icon size={18} />
             </div>
             <div>

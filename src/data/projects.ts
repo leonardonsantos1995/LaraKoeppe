@@ -1,4 +1,11 @@
-import type { Project } from '@/types/project'
+import type { Project, ProjectImage } from '@/types/project'
+
+function buildImages(slug: string, title: string, count: number): ProjectImage[] {
+  return Array.from({ length: count }, (_, i) => ({
+    src: `/images/projects/${slug}/image-${i + 1}.png`,
+    alt: `${title} - Vista ${i + 1}`,
+  }))
+}
 
 export const projects: Project[] = [
   {
@@ -6,26 +13,24 @@ export const projects: Project[] = [
     title: 'Casa Rocca',
     category: 'residencial',
     description:
-      'Projeto residencial com modelagem 3D, uso de inteligência artificial e pós-produção para visualização fotorrealista. Auxílio no desenvolvimento do projeto arquitetônico, contribuindo no desenho e concepção do projeto.',
-    services: ['Modelagem 3D', 'IA', 'Pós-produção', 'Auxílio no Projeto Arquitetônico'],
+      'Atuação no auxílio ao desenvolvimento arquitetônico, graficação, desenvolvimento de maquete eletrônica (3D), renderização, pós-produção e desenvolvimento de vídeo.',
+    services: [
+      'Auxílio no Desenvolvimento Arquitetônico',
+      'Graficação',
+      'Maquete Eletrônica (3D)',
+      'Renderização',
+      'Pós-produção',
+      'Desenvolvimento de Vídeo',
+    ],
     software: ['SketchUp', 'Lumion'],
-    thumbnailIndex: 7,
+    thumbnailIndex: 8,
     images: [
-      { src: '/images/projects/casa-rocca/image-1.webp', alt: 'Casa Rocca - Vista 1' },
-      { src: '/images/projects/casa-rocca/image-2.webp', alt: 'Casa Rocca - Vista 2' },
-      { src: '/images/projects/casa-rocca/image-3.webp', alt: 'Casa Rocca - Vista 3' },
-      { src: '/images/projects/casa-rocca/image-4.webp', alt: 'Casa Rocca - Vista 4' },
-      { src: '/images/projects/casa-rocca/image-5.webp', alt: 'Casa Rocca - Vista 5' },
-      { src: '/images/projects/casa-rocca/image-6.webp', alt: 'Casa Rocca - Vista 6' },
-      { src: '/images/projects/casa-rocca/image-7.webp', alt: 'Casa Rocca - Vista 7' },
-      { src: '/images/projects/casa-rocca/image-8.webp', alt: 'Casa Rocca - Vista 8' },
-      { src: '/images/projects/casa-rocca/image-9.webp', alt: 'Casa Rocca - Vista 9' },
-      { src: '/images/projects/casa-rocca/image-10.webp', alt: 'Casa Rocca - Vista 10' },
-      { src: '/images/projects/casa-rocca/image-11.webp', alt: 'Casa Rocca - Vista 11' },
-      { src: '/images/projects/casa-rocca/image-12.webp', alt: 'Casa Rocca - Vista 12' },
-      { src: '/images/projects/casa-rocca/image-13.webp', alt: 'Casa Rocca - Vista 13' },
-      { src: '/images/projects/casa-rocca/image-14.webp', alt: 'Casa Rocca - Vista 14' },
-      { src: '/images/projects/casa-rocca/image-15.webp', alt: 'Casa Rocca - Vista 15' },
+      {
+        src: '/images/projects/casa-rocca/rocca.mp4',
+        alt: 'Casa Rocca - Vídeo',
+        type: 'video',
+      },
+      ...buildImages('casa-rocca', 'Casa Rocca', 17),
     ],
     featured: true,
   },
@@ -34,44 +39,79 @@ export const projects: Project[] = [
     title: 'Casa Magna',
     category: 'residencial',
     description:
-      'Projeto residencial com modelagem 3D e renderização fotorrealista. Visualização completa dos ambientes internos e externos para auxiliar na tomada de decisões do projeto.',
-    services: ['Modelagem 3D', 'Renderização'],
+      'Atuação no auxílio ao desenvolvimento arquitetônico, graficação, desenvolvimento de maquete eletrônica (3D), renderização e pós-produção.',
+    services: [
+      'Auxílio no Desenvolvimento Arquitetônico',
+      'Graficação',
+      'Maquete Eletrônica (3D)',
+      'Renderização',
+      'Pós-produção',
+    ],
     software: ['SketchUp', 'Lumion'],
-    thumbnailIndex: 17,
-    images: Array.from({ length: 24 }, (_, i) => ({
-      src: `/images/projects/casa-magna/image-${i + 1}.webp`,
-      alt: `Casa Magna - Vista ${i + 1}`,
-    })),
+    thumbnailIndex: 16,
+    images: buildImages('casa-magna', 'Casa Magna', 17),
     featured: true,
   },
   {
-    id: 'casa-rl',
-    title: 'Casa R.L',
+    id: 'casa-vinte',
+    title: 'Casa Vinte',
     category: 'residencial',
     description:
-      'Projeto residencial com desenvolvimento completo de modelagem 3D e renderização. Imagens fotorrealistas que permitem visualizar cada detalhe da edificação antes da execução.',
-    services: ['Modelagem 3D', 'Renderização'],
+      'Atuação no auxílio ao desenvolvimento arquitetônico, graficação, desenvolvimento de maquete eletrônica (3D), renderização, pós-produção e desenvolvimento de vídeo.',
+    services: [
+      'Auxílio no Desenvolvimento Arquitetônico',
+      'Graficação',
+      'Maquete Eletrônica (3D)',
+      'Renderização',
+      'Pós-produção',
+      'Desenvolvimento de Vídeo',
+    ],
     software: ['SketchUp', 'Lumion'],
-    thumbnailIndex: 31,
-    images: Array.from({ length: 32 }, (_, i) => ({
-      src: `/images/projects/casa-r.l/image-${i + 1}.webp`,
-      alt: `Casa R.L - Vista ${i + 1}`,
-    })),
+    thumbnailIndex: 1,
+    images: [
+      {
+        src: '/images/projects/casa-vinte/vinte.mp4',
+        alt: 'Casa Vinte - Vídeo',
+        type: 'video',
+      },
+      ...buildImages('casa-vinte', 'Casa Vinte', 19),
+    ],
     featured: true,
   },
   {
-    id: 'casa-tf',
-    title: 'Casa T.F',
+    id: 'casa-aria',
+    title: 'Casa Aria',
     category: 'residencial',
     description:
-      'Projeto residencial com modelagem tridimensional e pós-produção de imagens. Renderizações que traduzem a essência do projeto arquitetônico com realismo e qualidade.',
-    services: ['Modelagem 3D', 'Renderização'],
+      'Atuação no auxílio ao desenvolvimento arquitetônico, graficação, desenvolvimento de maquete eletrônica (3D), renderização e pós-produção.',
+    services: [
+      'Auxílio no Desenvolvimento Arquitetônico',
+      'Graficação',
+      'Maquete Eletrônica (3D)',
+      'Renderização',
+      'Pós-produção',
+    ],
     software: ['SketchUp', 'Lumion'],
-    thumbnailIndex: 3,
-    images: Array.from({ length: 18 }, (_, i) => ({
-      src: `/images/projects/casa-t.f/image-${i + 1}.webp`,
-      alt: `Casa T.F - Vista ${i + 1}`,
-    })),
+    thumbnailIndex: 0,
+    images: buildImages('casa-aria', 'Casa Aria', 11),
+    featured: false,
+  },
+  {
+    id: 'casa-recanto',
+    title: 'Casa Recanto',
+    category: 'residencial',
+    description:
+      'Atuação no auxílio ao desenvolvimento arquitetônico, graficação, desenvolvimento de maquete eletrônica (3D), renderização e pós-produção.',
+    services: [
+      'Auxílio no Desenvolvimento Arquitetônico',
+      'Graficação',
+      'Maquete Eletrônica (3D)',
+      'Renderização',
+      'Pós-produção',
+    ],
+    software: ['SketchUp', 'Lumion'],
+    thumbnailIndex: 0,
+    images: buildImages('casa-recanto', 'Casa Recanto', 12),
     featured: false,
   },
 ]

@@ -28,9 +28,9 @@ export function ServiceCard({ service }: ServiceCardProps) {
   return (
     <motion.div
       variants={staggerItemVariants}
-      className="group p-8 bg-white rounded-sm border border-transparent transition-all duration-300 hover:shadow-md hover:border-b-2 hover:border-b-blush-300"
+      className="group p-8 bg-white rounded-sm border border-transparent transition-all duration-300 hover:shadow-md hover:border-b-2 hover:border-b-olive-300"
     >
-      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-sm bg-stone-100 text-charcoal-700 transition-colors group-hover:bg-blush-100 group-hover:text-blush-500">
+      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-sm bg-stone-100 text-charcoal-700 transition-colors group-hover:bg-olive-100 group-hover:text-olive-500">
         <Icon size={24} />
       </div>
       <h3 className="font-display text-lg font-semibold text-charcoal-900 mb-3">

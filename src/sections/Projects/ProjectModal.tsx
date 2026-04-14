@@ -51,10 +51,14 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
       (i) => i >= 0 && i < project.images.length
     )
     toPreload.forEach((i) => {
+      const media = project.images[i]
+      if (media.type === 'video') return
       const img = new Image()
-      img.src = project.images[i].src
+      img.src = media.src
     })
   }, [project, currentImage])
+
+  const currentMedia = project?.images[currentImage]
 
   return (
     <AnimatePresence>
@@ -83,21 +87,33 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             </button>
 
             <div className="relative aspect-[16/10] bg-charcoal-100">
-              {!imageLoaded && (
+              {!imageLoaded && currentMedia?.type !== 'video' && (
                 <div className="absolute inset-0 z-10 flex items-center justify-center">
                   <Loader2 size={32} className="animate-spin text-charcoal-400" />
                 </div>
               )}
-              <img
-                key={currentImage}
-                src={
-                  project.images[currentImage]?.src ??
-                  'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1200&q=80'
-                }
-                alt={project.images[currentImage]?.alt ?? project.title}
-                className={`h-full w-full object-cover transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-                onLoad={() => setImageLoaded(true)}
-              />
+              {currentMedia?.type === 'video' ? (
+                <video
+                  key={currentImage}
+                  src={currentMedia.src}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="h-full w-full object-contain bg-black"
+                />
+              ) : (
+                <img
+                  key={currentImage}
+                  src={
+                    currentMedia?.src ??
+                    'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1200&q=80'
+                  }
+                  alt={currentMedia?.alt ?? project.title}
+                  className={`h-full w-full object-cover transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                  onLoad={() => setImageLoaded(true)}
+                />
+              )}
 
               {project.images.length > 1 && (
                 <>

@@ -38,7 +38,7 @@ export function PageLoader({ visible }: PageLoaderProps) {
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="my-4 h-px w-16 origin-center bg-blush-300"
+            className="my-4 h-px w-16 origin-center bg-olive-300"
           />
 
           <motion.p
@@ -61,7 +61,7 @@ export function PageLoader({ visible }: PageLoaderProps) {
                 initial={{ x: '-100%' }}
                 animate={{ x: '100%' }}
                 transition={{ duration: 1, repeat: Infinity, ease: 'easeInOut' }}
-                className="h-full w-full bg-blush-300"
+                className="h-full w-full bg-olive-300"
               />
             </div>
           </motion.div>

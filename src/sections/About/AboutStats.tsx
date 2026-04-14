@@ -6,11 +6,14 @@ export function AboutStats() {
     <div className="mt-10 grid grid-cols-3 gap-6 items-start">
       {about.stats.map((stat, i) => (
         <FadeInWhenVisible key={stat.label} delay={i * 0.1}>
-          <div className="text-center">
-            <span className="inline-flex items-baseline h-10 font-display text-3xl font-semibold text-blush-400 md:text-4xl">
+          <div className="flex flex-col items-center text-center">
+            <span
+              className="font-display text-3xl font-semibold leading-none text-olive-400 md:text-4xl"
+              style={{ fontVariantNumeric: 'lining-nums' }}
+            >
               {stat.value}
             </span>
-            <span className="mt-2 block text-xs font-medium uppercase tracking-wider text-charcoal-500">
+            <span className="mt-3 flex min-h-[2.5rem] items-start justify-center text-xs font-medium uppercase tracking-wider text-charcoal-500">
               {stat.label}
             </span>
           </div>
