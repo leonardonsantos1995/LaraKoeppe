@@ -18,13 +18,16 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
   useEffect(() => {
     if (project) {
       document.body.style.overflow = 'hidden'
+      document.documentElement.classList.add('modal-open')
       setCurrentImage(0)
       setAllImagesLoaded(false)
     } else {
       document.body.style.overflow = ''
+      document.documentElement.classList.remove('modal-open')
     }
     return () => {
       document.body.style.overflow = ''
+      document.documentElement.classList.remove('modal-open')
     }
   }, [project])
 
