@@ -35,7 +35,7 @@ export function Hero() {
           className="mt-10"
         >
           <button
-            onClick={() => scrollToSection('projetos')}
+            onClick={() => scrollToSection('sobre')}
             className="cursor-pointer border border-stone-400 px-8 py-3 text-sm font-medium tracking-wider uppercase text-stone-200 transition-all duration-300 hover:border-olive-300 hover:bg-olive-300/10 hover:text-white"
           >
             Conheça meu portfólio

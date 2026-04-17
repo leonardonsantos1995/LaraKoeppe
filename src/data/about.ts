@@ -13,10 +13,6 @@ export const about = {
       degree: 'Arquitetura e Urbanismo',
       institution: 'UNISC (Graduação 2025)',
     },
-    {
-      degree: 'Ensino Fundamental e Médio',
-      institution: 'E.E.E.M. Ernesto Alves de Oliveira',
-    },
   ],
   languages: [
     { name: 'Português', level: 'Nativo' },
@@ -35,16 +31,34 @@ export const about = {
   ],
   experience: [
     {
-      role: 'Estagiária de Arquitetura',
-      company: 'Ronaldo Wink e Nathan Della Nina',
+      role: 'Arquiteta',
+      company: 'FM Participações e Investimentos LTDA',
+      employmentType: 'Tempo integral',
+      period: '2022 - o momento',
+      duration: '4 anos 4 meses',
+      description:
+        'Desenvolvimento de projetos arquitetônicos e de interiores, aprovação de projetos junto às prefeituras, elaboração detalhada de desenhos técnicos, modelagem 3D e renderização de projetos, pós-produção de imagens, acompanhamento de obras para assegurar a conformidade com os projetos, atendimento e suporte a clientes desde o início até a conclusão dos projetos, desenvolvimento de materiais de marketing e estratégias de comunicação visual, realização de checklists de obras para controle de qualidade, participação em reuniões de coordenação e planejamento de projetos, e colaboração com diferentes equipes para garantir a integração dos projetos.',
+      skills: ['Modelagem 3D', 'ARCHICAD'],
     },
     {
-      role: 'Vendedora Projetista',
-      company: 'Tendência Móveis Projetados (FINGER)',
+      role: 'Estágio de Arquitetura',
+      company: 'Escritório de Arquitetura Nathan Della Nina',
+      employmentType: 'Meio período',
+      period: 'jun de 2021 - abr de 2022',
+      duration: '11 meses',
+      description:
+        'Apoio ao desenvolvimento e digitalização de projetos de arquitetura em 2D e 3D, graficação de projetos complementares, levantamentos em obras, auxílio no controle de planilhas de administração e execução de obras, acompanhamento do processo de aprovação de projetos junto a prefeitura.',
+      skills: ['Modelagem 3D', 'AutoCAD'],
     },
     {
-      role: 'Assistente Administrativo',
-      company: 'Condomínio Belle Ville',
+      role: 'Projetista',
+      company: 'Finger Móveis Planejados',
+      employmentType: 'Tempo integral',
+      period: 'fev de 2017 - mar de 2020',
+      duration: '3 anos 2 meses',
+      description:
+        'Desenvolvimento de projetos de interiores, acompanhamento de montagens, graficação, auxílio no controle de caixa, controle de notas e atendimento ao público.',
+      skills: ['Modelagem 3D'],
     },
   ],
   experienceStartYear: 2017,

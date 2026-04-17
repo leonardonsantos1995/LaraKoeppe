@@ -1,9 +1,10 @@
 import { useEffect, useState, useCallback } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
-import { X, ChevronLeft, ChevronRight, Loader2 } from 'lucide-react'
+import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 import type { Project } from '@/types/project'
 import { categoryLabels } from '@/types/project'
 import { Badge } from '@/components/ui/Badge'
+import { Loader } from '@/components/ui/Loader'
 
 interface ProjectModalProps {
   project: Project | null
@@ -12,13 +13,13 @@ interface ProjectModalProps {
 
 export function ProjectModal({ project, onClose }: ProjectModalProps) {
   const [currentImage, setCurrentImage] = useState(0)
-  const [imageLoaded, setImageLoaded] = useState(false)
+  const [allImagesLoaded, setAllImagesLoaded] = useState(false)
 
   useEffect(() => {
     if (project) {
       document.body.style.overflow = 'hidden'
       setCurrentImage(0)
-      setImageLoaded(false)
+      setAllImagesLoaded(false)
     } else {
       document.body.style.overflow = ''
     }
@@ -43,20 +44,34 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [handleKeyDown])
 
-  // Reset loading state and preload adjacent images
   useEffect(() => {
     if (!project) return
-    setImageLoaded(false)
-    const toPreload = [currentImage - 1, currentImage + 1].filter(
-      (i) => i >= 0 && i < project.images.length
-    )
-    toPreload.forEach((i) => {
-      const media = project.images[i]
-      if (media.type === 'video') return
+
+    const images = project.images.filter((m) => m.type !== 'video')
+    if (images.length === 0) {
+      setAllImagesLoaded(true)
+      return
+    }
+
+    let cancelled = false
+    let loadedCount = 0
+
+    images.forEach((media) => {
       const img = new Image()
+      const markLoaded = () => {
+        if (cancelled) return
+        loadedCount += 1
+        if (loadedCount === images.length) setAllImagesLoaded(true)
+      }
+      img.onload = markLoaded
+      img.onerror = markLoaded
       img.src = media.src
     })
-  }, [project, currentImage])
+
+    return () => {
+      cancelled = true
+    }
+  }, [project])
 
   const currentMedia = project?.images[currentImage]
 
@@ -80,18 +95,26 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           >
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 z-10 flex h-10 w-10 cursor-pointer items-center justify-center bg-white/90 text-charcoal-700 shadow-sm transition-colors hover:text-charcoal-900"
+              className="absolute top-4 right-4 z-30 flex h-10 w-10 cursor-pointer items-center justify-center bg-white/90 text-charcoal-700 shadow-sm transition-colors hover:text-charcoal-900"
               aria-label="Fechar"
             >
               <X size={20} />
             </button>
 
             <div className="relative aspect-[16/10] bg-charcoal-100">
-              {!imageLoaded && currentMedia?.type !== 'video' && (
-                <div className="absolute inset-0 z-10 flex items-center justify-center">
-                  <Loader2 size={32} className="animate-spin text-charcoal-400" />
-                </div>
-              )}
+              <AnimatePresence>
+                {!allImagesLoaded && (
+                  <motion.div
+                    initial={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.4, ease: 'easeInOut' }}
+                    className="absolute inset-0 z-20"
+                  >
+                    <Loader variant="light" size="md" className="h-full w-full" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
               {currentMedia?.type === 'video' ? (
                 <video
                   key={currentImage}
@@ -110,8 +133,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                     'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1200&q=80'
                   }
                   alt={currentMedia?.alt ?? project.title}
-                  className={`h-full w-full object-cover transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-                  onLoad={() => setImageLoaded(true)}
+                  className="h-full w-full object-cover"
                 />
               )}
 

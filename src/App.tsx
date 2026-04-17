@@ -5,6 +5,7 @@ import { ScrollToTop } from '@/components/layout/ScrollToTop'
 import { PageLoader } from '@/components/layout/PageLoader'
 import { Hero } from '@/sections/Hero'
 import { About } from '@/sections/About'
+import { Experience } from '@/sections/Experience'
 import { Projects } from '@/sections/Projects'
 import { Services } from '@/sections/Services'
 import { Contact } from '@/sections/Contact'
@@ -42,6 +43,7 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Experience />
         <Projects />
         <Services />
         <Contact />
