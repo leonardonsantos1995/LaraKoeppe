@@ -9,8 +9,8 @@ function buildImages(slug: string, title: string, count: number): ProjectImage[]
 
 export const projects: Project[] = [
   {
-    id: 'casa-rocca',
-    title: 'Casa Rocca',
+    id: 'casa-24',
+    title: 'Casa 24',
     category: 'residencial',
     description:
       'Atuação no auxílio ao desenvolvimento arquitetônico, graficação, desenvolvimento de maquete eletrônica (3D), renderização, pós-produção e desenvolvimento de vídeo.',
@@ -23,20 +23,20 @@ export const projects: Project[] = [
       'Desenvolvimento de Vídeo',
     ],
     software: ['SketchUp', 'Lumion'],
-    thumbnailIndex: 8,
+    thumbnailIndex: 16,
     images: [
       {
-        src: '/images/projects/casa-rocca/rocca.mp4',
-        alt: 'Casa Rocca - Vídeo',
+        src: '/images/projects/casa-24/rocca.mp4',
+        alt: 'Casa 24 - Vídeo',
         type: 'video',
       },
-      ...buildImages('casa-rocca', 'Casa Rocca', 17),
+      ...buildImages('casa-24', 'Casa 24', 17),
     ],
     featured: true,
   },
   {
-    id: 'casa-magna',
-    title: 'Casa Magna',
+    id: 'casa-23',
+    title: 'Casa 23',
     category: 'residencial',
     description:
       'Atuação no auxílio ao desenvolvimento arquitetônico, graficação, desenvolvimento de maquete eletrônica (3D), renderização e pós-produção.',
@@ -49,12 +49,12 @@ export const projects: Project[] = [
     ],
     software: ['SketchUp', 'Lumion'],
     thumbnailIndex: 16,
-    images: buildImages('casa-magna', 'Casa Magna', 17),
+    images: buildImages('casa-23', 'Casa 23', 17),
     featured: true,
   },
   {
-    id: 'casa-vinte',
-    title: 'Casa Vinte',
+    id: 'casa-22',
+    title: 'Casa 22',
     category: 'residencial',
     description:
       'Atuação no auxílio ao desenvolvimento arquitetônico, graficação, desenvolvimento de maquete eletrônica (3D), renderização, pós-produção e desenvolvimento de vídeo.',
@@ -70,17 +70,17 @@ export const projects: Project[] = [
     thumbnailIndex: 1,
     images: [
       {
-        src: '/images/projects/casa-vinte/vinte.mp4',
-        alt: 'Casa Vinte - Vídeo',
+        src: '/images/projects/casa-22/vinte.mp4',
+        alt: 'Casa 22 - Vídeo',
         type: 'video',
       },
-      ...buildImages('casa-vinte', 'Casa Vinte', 19),
+      ...buildImages('casa-22', 'Casa 22', 19),
     ],
     featured: true,
   },
   {
-    id: 'casa-aria',
-    title: 'Casa Aria',
+    id: 'casa-20',
+    title: 'Casa 20',
     category: 'residencial',
     description:
       'Atuação no auxílio ao desenvolvimento arquitetônico, graficação, desenvolvimento de maquete eletrônica (3D), renderização e pós-produção.',
@@ -94,15 +94,34 @@ export const projects: Project[] = [
     software: ['SketchUp', 'Lumion'],
     thumbnailIndex: 0,
     images: [
-      { src: '/images/projects/casa-aria/image-3.png', alt: 'Casa Aria - Vista 3' },
-      ...buildImages('casa-aria', 'Casa Aria', 11).filter((_, i) => i !== 2),
+      { src: '/images/projects/casa-20/image-3.png', alt: 'Casa 20 - Vista 3' },
+      ...buildImages('casa-20', 'Casa 20', 11).filter((_, i) => i !== 2),
     ],
     featured: false,
   },
   {
-    id: 'casa-recanto',
-    title: 'Casa Recanto',
+    id: 'casa-25',
+    title: 'Casa 25',
     category: 'residencial',
+    description:
+      'Atuação no auxílio ao desenvolvimento arquitetônico, graficação, desenvolvimento de maquete eletrônica (3D), renderização, pós-produção e projeto de interiores.',
+    services: [
+      'Auxílio no Desenvolvimento Arquitetônico',
+      'Graficação',
+      'Maquete Eletrônica (3D)',
+      'Renderização',
+      'Pós-produção',
+      'Projeto de Interiores',
+    ],
+    software: ['SketchUp', 'Lumion'],
+    thumbnailIndex: 5,
+    images: buildImages('casa-25', 'Casa 25', 6),
+    featured: true,
+  },
+  {
+    id: 'casa-comercial-1',
+    title: 'Comercial 1',
+    category: 'comercial',
     description:
       'Atuação no auxílio ao desenvolvimento arquitetônico, graficação, desenvolvimento de maquete eletrônica (3D), renderização e pós-produção.',
     services: [
@@ -111,6 +130,80 @@ export const projects: Project[] = [
       'Maquete Eletrônica (3D)',
       'Renderização',
       'Pós-produção',
+    ],
+    software: ['SketchUp', 'Lumion'],
+    thumbnailIndex: 1,
+    images: buildImages('casa-comercial-1', 'Comercial 1', 4),
+    featured: true,
+  },
+  {
+    id: 'casa-ba',
+    title: 'Casa B.A',
+    category: 'residencial',
+    description:
+      'Atuação no auxílio ao desenvolvimento arquitetônico, graficação, desenvolvimento de maquete eletrônica (3D), renderização, pós-produção e projeto de interiores.',
+    services: [
+      'Auxílio no Desenvolvimento Arquitetônico',
+      'Graficação',
+      'Maquete Eletrônica (3D)',
+      'Renderização',
+      'Pós-produção',
+      'Projeto de Interiores',
+    ],
+    software: ['SketchUp', 'Lumion'],
+    thumbnailIndex: 0,
+    images: buildImages('casa-ba', 'Casa B.A', 7),
+    featured: true,
+  },
+  {
+    id: 'dormitorio-infantil',
+    title: 'Dorm. Infantil',
+    category: 'interiores',
+    description:
+      'Atuação no desenvolvimento de projeto de interiores, graficação, desenvolvimento de maquete eletrônica (3D), renderização e pós-produção.',
+    services: [
+      'Desenvolvimento de Projeto de Interiores',
+      'Graficação',
+      'Maquete Eletrônica (3D)',
+      'Renderização',
+      'Pós-produção',
+    ],
+    software: ['SketchUp', 'Lumion'],
+    thumbnailIndex: 0,
+    images: buildImages('dormitorio-infantil', 'Dorm. Infantil', 6),
+    featured: true,
+  },
+  {
+    id: 'cozinha-bg',
+    title: 'Cozinha B.G',
+    category: 'interiores',
+    description:
+      'Atuação no desenvolvimento de projeto de interiores, graficação, desenvolvimento de maquete eletrônica (3D), renderização e pós-produção.',
+    services: [
+      'Desenvolvimento de Projeto de Interiores',
+      'Graficação',
+      'Maquete Eletrônica (3D)',
+      'Renderização',
+      'Pós-produção',
+    ],
+    software: ['SketchUp', 'Lumion'],
+    thumbnailIndex: 0,
+    images: buildImages('cozinha-bg', 'Cozinha B.G', 5),
+    featured: true,
+  },
+  {
+    id: 'casa-recanto',
+    title: 'Casa Recanto',
+    category: 'residencial',
+    description:
+      'Atuação no auxílio ao desenvolvimento arquitetônico, graficação, desenvolvimento de maquete eletrônica (3D), renderização, pós-produção e projeto de interiores.',
+    services: [
+      'Auxílio no Desenvolvimento Arquitetônico',
+      'Graficação',
+      'Maquete Eletrônica (3D)',
+      'Renderização',
+      'Pós-produção',
+      'Projeto de Interiores',
     ],
     software: ['SketchUp', 'Lumion'],
     thumbnailIndex: 0,

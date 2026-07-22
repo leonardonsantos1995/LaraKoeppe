@@ -1,5 +1,6 @@
 export type ProjectCategory =
   | 'residencial'
+  | 'comercial'
   | 'detalhamento'
   | 'interiores'
   | 'levantamento'
@@ -24,6 +25,7 @@ export interface Project {
 
 export const categoryLabels: Record<ProjectCategory, string> = {
   residencial: 'Residencial',
+  comercial: 'Comercial',
   detalhamento: 'Detalhamento',
   interiores: 'Interiores',
   levantamento: 'Levantamento',
